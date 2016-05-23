@@ -1,0 +1,11 @@
+QMainWindow {
+
+    background: rgb(237, 237, 237);
+
+}
+
+QTextEdit {
+
+    background-color: rgb(255, 255, 255);
+
+}
