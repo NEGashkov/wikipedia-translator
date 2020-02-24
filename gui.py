@@ -168,12 +168,19 @@ class MainWindow(QMainWindow):
 
         if Translator.translate_user_term(term, self.language)[0] == '0':
             self.adjust_query.clear()
-            for i in range(len(search_result)):
-                self.adjust_query.addItem(search_result[i])
+            for item in search_result:
+                self.adjust_query.addItem(item)
             term = self.adjust_query.currentText()
-            self.english_text_edit.setText(Translator.translate_user_term(term, self.language)[1:])
+            self.english_text_edit.setText(
+                Translator.translate_user_term(term, self.language)[1:]
+            )
         else:
-            QMessageBox.warning(self, 'Error', Translator.translate_user_term(term, self.language)[1:], QMessageBox.Ok)
+            QMessageBox.warning(
+                self,
+                'Error',
+                Translator.translate_user_term(term, self.language)[1:],
+                QMessageBox.Ok,
+            )
 
     def translate_to_russian_button_clicked(self):
 
@@ -195,12 +202,19 @@ class MainWindow(QMainWindow):
 
         if Translator.translate_user_term(term, self.language)[0] == '0':
             self.adjust_query.clear()
-            for i in range(len(search_result)):
-                self.adjust_query.addItem(search_result[i])
+            for item in search_result:
+                self.adjust_query.addItem(item)
             term = self.adjust_query.currentText()
-            self.russian_text_edit.setText(Translator.translate_user_term(term, self.language)[1:])
+            self.russian_text_edit.setText(
+                Translator.translate_user_term(term, self.language)[1:]
+            )
         else:
-            QMessageBox.warning(self, 'Error', Translator.translate_user_term(term, self.language)[1:], QMessageBox.Ok)
+            QMessageBox.warning(
+                self,
+                'Error',
+                Translator.translate_user_term(term, self.language)[1:],
+                QMessageBox.Ok,
+            )
 
     def adjust_query_button_clicked(self):
 
